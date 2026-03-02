@@ -1,10 +1,9 @@
 :root {
-    --bg-dark: #070707;
+    --bg-dark: #080808;
     --color-beige: #c7baa6;
     --color-brown: #352c28;
     --color-grey: #686867;
-    --accent: #c7baa6;
-    --white-glow: rgba(255, 255, 255, 0.9);
+    --pure-white: #ffffff;
 }
 
 * {
@@ -12,7 +11,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    cursor: none;
 }
 
 body {
@@ -26,21 +24,39 @@ body {
     align-items: center;
 }
 
-/* Lightning Cursor */
+/* --- SMART CURSOR (Desktop Only) --- */
 #cursor {
     position: fixed;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background: white;
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px 5px var(--accent);
+    box-shadow: 0 0 20px 4px var(--color-beige);
     mix-blend-mode: difference;
+    display: block;
 }
 
-/* Animated Background */
+/* Hide cursor on mobile/touch devices */
+@media (pointer: coarse) {
+    #cursor {
+        display: none !important;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+}
+
+@media (pointer: fine) {
+    * {
+        cursor: none !important;
+    }
+}
+
+/* --- BACKGROUND --- */
 .background-visuals {
     position: fixed;
     inset: 0;
@@ -53,7 +69,7 @@ body {
     width: 60vw;
     height: 60vw;
     border-radius: 50%;
-    opacity: 0.15;
+    opacity: 0.12;
     animation: float 20s infinite alternate;
 }
 
@@ -79,7 +95,7 @@ body {
     }
 }
 
-/* Welcome Layer */
+/* --- INTRO --- */
 .layer {
     position: absolute;
     inset: 0;
@@ -89,59 +105,53 @@ body {
     justify-content: center;
     z-index: 10;
     transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-#intro-layer {
     text-align: center;
-    background: radial-gradient(circle, rgba(53, 44, 40, 0.4) 0%, transparent 70%);
 }
 
 .exit-effect {
     opacity: 0;
-    transform: translateY(-50px) scale(0.95);
+    transform: translateY(-30px);
     filter: blur(20px);
     pointer-events: none;
 }
 
 .welcome-msg {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 8px;
     color: var(--color-beige);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-transform: uppercase;
 }
 
 .intro-title {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
     font-weight: 800;
-    margin-bottom: 30px;
     line-height: 1;
+    margin-bottom: 40px;
 }
 
 .intro-title span {
     color: var(--color-beige);
-    font-style: italic;
 }
 
 .action-btn {
-    background: white;
+    background: var(--pure-white);
     color: black;
     border: none;
-    padding: 22px 60px;
+    padding: 20px 55px;
     border-radius: 100px;
     font-weight: 700;
     letter-spacing: 2px;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .action-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 40px var(--accent);
+    box-shadow: 0 0 30px var(--color-beige);
 }
 
-/* Reveal Section: Logo Top, Card Bottom */
+/* --- MAIN REVEAL STACK --- */
 #main-content {
     opacity: 0;
     transform: translateY(50px);
@@ -159,45 +169,52 @@ body {
     flex-direction: column;
     align-items: center;
     width: 90%;
-    max-width: 700px;
-    gap: 40px;
+    max-width: 650px;
+    z-index: 20;
 }
 
-/* Creative BG for Logo */
+/* --- CREATIVE LOGO BOX (HIGH CONTRAST) --- */
 .logo-pod {
-    background: var(--white-glow);
-    padding: 30px 60px;
-    border-radius: 100px 100px 20px 20px;
-    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.1);
+    background: var(--pure-white);
+    /* Solid White for maximum contrast */
+    padding: 40px;
+    border-radius: 40px 40px 0 0;
+    /* Rounded top, flat bottom to connect to card */
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: slideDown 1s ease-out;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 21;
 }
 
 .main-logo {
-    width: 280px;
-    /* Adjusted for 464x1200 proportions */
+    width: 100%;
+    max-width: 320px;
+    /* Fitting your 464x1200 proportions */
     height: auto;
-    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+    display: block;
 }
 
+/* --- THE TEXT CARD --- */
 .a4-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(199, 186, 166, 0.15);
-    padding: 50px;
-    border-radius: 30px;
-    backdrop-filter: blur(40px);
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none;
+    /* Merges with the logo box */
+    padding: 50px 40px;
+    border-radius: 0 0 40px 40px;
+    backdrop-filter: blur(50px);
     text-align: center;
     width: 100%;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
 }
 
-/* Scroll-Reveal Items */
 .reveal-item {
     opacity: 0;
-    transform: translateY(30px);
-    transition: 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform: translateY(20px);
+    transition: 1s ease;
 }
 
 .active .reveal-item {
@@ -213,58 +230,43 @@ body {
     transition-delay: 0.5s;
 }
 
-.d3 {
-    transition-delay: 0.8s;
-}
-
 .reveal-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
+    font-weight: 700;
+    color: white;
 }
 
 .reveal-subtitle {
     color: var(--color-beige);
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+    letter-spacing: 4px;
+    font-size: 0.85rem;
     margin-bottom: 25px;
 }
 
 .divider {
-    width: 50px;
+    width: 40px;
     height: 2px;
     background: var(--color-grey);
     margin: 0 auto 30px;
 }
 
 .reveal-body {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.8;
-    color: #adadad;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-30px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    color: #d1d1d1;
 }
 
 @media (max-width: 600px) {
-    .intro-title {
-        font-size: 2.5rem;
+    .a4-card {
+        padding: 40px 25px;
     }
 
-    .a4-card {
+    .logo-pod {
         padding: 30px;
     }
 
-    .main-logo {
-        width: 180px;
+    .reveal-title {
+        font-size: 1.8rem;
     }
 }

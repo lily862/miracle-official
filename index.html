@@ -5,52 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="styles.css">
-    <title>Miracle | 2026 Seminar</title>
+    <title>Seminar Experience</title>
 
 </head>
 
 <body>
 
-    <div id="cursor"></div>
-
-    <div class="background-visuals">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
+    <div class="blob-container">
+        <div class="blob color-1"></div>
+        <div class="blob color-2"></div>
     </div>
 
-    <section id="intro-layer" class="layer">
-        <p class="welcome-msg">A Miracle Experience</p>
-        <h1 class="intro-title">Pause.<br><span>Decide Better.</span></h1>
-        <button class="action-btn" onclick="revealExperience()">ENTER SESSION</button>
-    </section>
+    <div id="intro-layer" class="layer">
+        <div class="breathing-circle"></div>
+        <p class="tagline">PRESENTED BY [COMPANY]</p>
+        <h1 class="main-title">A New<br><span>Perspective</span></h1>
+        <button class="pulse-button" onclick="startExperience()">Unlock Session</button>
+    </div>
 
-    <section id="main-content" class="layer">
-        <div class="presentation-stack">
-
-            <div class="logo-pod">
-                <img src="logo.png" alt="Miracle" class="main-logo">
-            </div>
-
-            <div class="a4-card">
-                <div class="reveal-item d1">
-                    <h2 class="reveal-title">Strategic Summit</h2>
-                    <h3 class="reveal-subtitle">Session 2026</h3>
-                    <div class="divider"></div>
-                </div>
-
-                <div class="reveal-item d2">
-                    <p class="reveal-body">
-                        Welcome to a sanctuary of focus. Today we explore how the <strong>Structured Pause</strong>
-                        transforms professional intuition into strategic mastery.
-                        <br><br>
-                        Please silence all devices to maintain the collective rhythm of this experience.
-                    </p>
-                </div>
-            </div>
-
+    <div id="main-content" class="layer">
+        <div class="content-card">
+            <h2 class="reveal-title">Welcome to the Seminar</h2>
+            <div class="divider"></div>
+            <p class="reveal-text">
+                The session is about to begin. Please silence your devices and prepare to engage with the upcoming
+                presentation.
+            </p>
         </div>
-    </section>
-    <script src="./script.js"></script>
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>

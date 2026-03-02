@@ -1,23 +1,18 @@
-// Lighting Cursor (Only follows on desktop)
-const cursor = document.getElementById('cursor');
-document.addEventListener('mousemove', (e) => {
-    if (window.matchMedia("(pointer: fine)").matches) {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+function startExperience() {
+    // Trigger haptic feedback (if supported)
+    if (window.navigator.vibrate) {
+        window.navigator.vibrate(10);
     }
-});
 
-function revealExperience() {
     const intro = document.getElementById('intro-layer');
     const main = document.getElementById('main-content');
 
-    // Haptic for mobile
-    if (navigator.vibrate) navigator.vibrate(10);
-
+    // 1. Fade out intro
     intro.classList.add('exit-effect');
 
+    // 2. Fade in main content after transition
     setTimeout(() => {
         intro.style.display = 'none';
         main.classList.add('active');
-    }, 800);
+    }, 600);
 }

@@ -3,38 +3,194 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="styles.css">
-    <title>Seminar Experience</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miracle | Management Standard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #1a1a1a;
+            --text-muted: #555555;
+            --accent: #000000;
+        }
 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 600px;
+            /* Optimized for reading */
+            width: 90%;
+            padding: 60px 20px;
+        }
+
+        /* Responsive Logo */
+        .logo-container {
+            width: 100%;
+            max-width: 250px;
+            /* Adjust size here */
+            margin: 0 auto 40px auto;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-weight: 300;
+            margin-bottom: 60px;
+            color: var(--text-muted);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin-top: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #ccc;
+        }
+
+        .timeline-box {
+            background: #fcfcfc;
+            padding: 30px;
+            border: 1px solid #f0f0f0;
+            margin: 40px 0;
+        }
+
+        .phase-title {
+            font-weight: 600;
+            display: block;
+            margin-top: 15px;
+        }
+
+        /* CTA Button */
+        .cta-container {
+            margin: 60px 0 40px 0;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 18px 35px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="blob-container">
-        <div class="blob color-1"></div>
-        <div class="blob color-2"></div>
-    </div>
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="Miracle Logo">
+        </div>
 
-    <div id="intro-layer" class="layer">
-        <div class="breathing-circle"></div>
-        <p class="tagline">PRESENTED BY [COMPANY]</p>
-        <h1 class="main-title">A New<br><span>Perspective</span></h1>
-        <button class="pulse-button" onclick="startExperience()">Unlock Session</button>
-    </div>
+        <h1>PAUSE IS A RULE</h1>
+        <p class="subtitle">Management Standard for Decision Precision Under Pressure</p>
 
-    <div id="main-content" class="layer">
-        <div class="content-card">
-            <h2 class="reveal-title">Welcome to the Seminar</h2>
-            <div class="divider"></div>
-            <p class="reveal-text">
-                The session is about to begin. Please silence your devices and prepare to engage with the upcoming
-                presentation.
-            </p>
+        <h2>The Structural Gap</h2>
+        <p>Most organizations standardize performance—KPIs, processes, and accountability. However, the moment before a
+            decision remains unstructured.</p>
+        <p>Reactive decisions are not a leadership weakness; they are a structural gap.</p>
+        <p>When pressure dictates commitment, decision precision declines, rework increases, and decisions are reopened.
+        </p>
+
+        <h2>The Standard</h2>
+        <p>Miracle implements a formal management standard for the pre-decision moment, integrated into:</p>
+        <ul>
+            <li>Recurring leadership meetings</li>
+            <li>Critical decision points</li>
+            <li>Escalations and commitment moments</li>
+        </ul>
+        <p><em>Not motivational. Operational.</em></p>
+
+        <div class="timeline-box">
+            <h2>Implementation Timeline — 90 Days</h2>
+            <span class="phase-title">Phase 1 — Diagnostic & Protocol Design (Weeks 1 – 3)</span>
+            <ul>
+                <li>Leadership decision audit</li>
+                <li>Identification of high-risk decision points</li>
+            </ul>
+            <span class="phase-title">Phase 2 — Live Integration (Weeks 4 – 8)</span>
+            <ul>
+                <li>Integration into recurring meetings</li>
+                <li>Application during escalations</li>
+            </ul>
+            <span class="phase-title">Phase 3 — Institutionalization (Weeks 9 – 12)</span>
+            <ul>
+                <li>Internal ownership transfer</li>
+                <li>Precision tracking</li>
+            </ul>
+        </div>
+
+        <h2>When This Is Needed</h2>
+        <p>If your leadership team frequently revisits decisions, corrects misaligned commitments, or reworks completed
+            initiatives, you have a structural gap.</p>
+
+        <div class="cta-container">
+            <a href="mailto:lily@miracleofficial.com?subject=Executive%20Brief%20Request%20%E2%80%93%20Miracle&body=Hello%2C%0A%0APlease%20provide%20the%20Executive%20Brief%20for%20leadership%20review.%0A%0ACompany%3A%0ARole%2FTitle%3A%0ACompany%20Website%3A"
+                class="btn">
+                Request the Executive Brief
+            </a>
+        </div>
+
+        <div class="contact-info">
+            <p>lily@miracleofficial.com</p>
+            <p>+357 96 005 573</p>
         </div>
     </div>
-
-    <script src="script.js"></script>
 
 </body>
 

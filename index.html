@@ -20,7 +20,7 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--primary-dark);
-            line-height: 1.8;
+            line-height: 1.6;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -44,40 +44,63 @@
             display: block;
         }
 
-        h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+        /* Typography to match your exact text structure */
+        .title-block {
             text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin: 0;
             color: var(--primary-dark);
         }
 
         .subtitle {
-            text-align: center;
+            font-size: 1.1rem;
             font-weight: 400;
-            margin-bottom: 60px;
+            margin: 10px 0 0 0;
             color: var(--secondary-text);
         }
 
-        h2 {
-            font-size: 1.25rem;
-            margin-top: 50px;
+        .section-wrap {
+            margin-bottom: 40px;
+        }
+
+        .label {
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--primary-dark);
             border-bottom: 2px solid var(--accent-gold);
             display: inline-block;
-            padding-bottom: 2px;
+            margin-bottom: 15px;
+        }
+
+        .content-text {
+            white-space: pre-line;
+            /* Preserves your specific line breaks */
+            margin-bottom: 15px;
         }
 
         ul {
             list-style: none;
             padding: 0;
+            margin: 0 0 20px 0;
         }
 
         li {
-            margin-bottom: 15px;
+            margin-bottom: 8px;
             color: var(--secondary-text);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
         }
 
         .timeline-box {
@@ -90,13 +113,13 @@
         .phase-title {
             font-weight: 600;
             display: block;
-            margin-top: 15px;
+            margin-top: 20px;
             color: var(--primary-dark);
         }
 
-        /* Button Animation */
+        /* Button & Animation */
         .cta-container {
-            margin: 60px 0 40px 0;
+            margin: 60px 0 20px 0;
             text-align: center;
         }
 
@@ -118,13 +141,15 @@
         }
 
         .btn:active {
-            transform: scale(0.98);
+            transform: scale(0.96);
+            /* Click animation */
         }
 
         .contact-info {
             text-align: center;
             font-size: 0.9rem;
             color: var(--secondary-text);
+            line-height: 1.8;
         }
     </style>
 </head>
@@ -136,46 +161,88 @@
             <img src="logo.png" alt="Miracle Logo">
         </div>
 
-        <h1>PAUSE IS A RULE</h1>
-        <p class="subtitle">Management Standard for Decision Precision Under Pressure</p>
+        <div class="title-block">
+            <h1>PAUSE IS A RULE</h1>
+            <p class="subtitle">Management Standard for Decision Precision Under Pressure</p>
+        </div>
 
-        <h2>The Structural Gap</h2>
-        <p>Most organizations standardize performance through KPIs, processes, and accountability. However, the moment
-            before a decision remains unstructured.</p>
-        <p>Reactive decisions are not a leadership weakness; they are a structural gap. When pressure dictates
-            commitment, precision declines, rework increases, and decisions are frequently reopened.</p>
+        <div class="section-wrap">
+            <div class="label">The Structural Gap</div>
+            <div class="content-text">
+                Most organizations standardize performance.
+                KPIs. Processes. Accountability.
 
-        <h2>The Standard</h2>
-        <p>Miracle implements a formal management standard for the pre-decision moment, integrated into:</p>
-        <ul>
-            <li>Recurring leadership meetings</li>
-            <li>Critical decision points</li>
-            <li>Escalations and commitment moments</li>
-        </ul>
-        <p><em>Not motivational. Operational.</em></p>
+                The moment before a decision remains unstructured.
 
-        <div class="timeline-box">
-            <h2>Implementation Timeline — 90 Days</h2>
-            <span class="phase-title">Phase 1 — Diagnostic & Protocol Design</span>
+                Reactive decisions are not a leadership weakness.
+                They are a structural gap.
+
+                When pressure dictates commitment:
+            </div>
             <ul>
-                <li>Leadership decision audit</li>
-                <li>Identification of high-risk decision points</li>
-            </ul>
-            <span class="phase-title">Phase 2 — Live Integration</span>
-            <ul>
-                <li>Integration into recurring meetings</li>
-                <li>Application during escalations</li>
-            </ul>
-            <span class="phase-title">Phase 3 — Institutionalization</span>
-            <ul>
-                <li>Internal ownership transfer</li>
-                <li>Precision tracking</li>
+                <li>Decision precision declines</li>
+                <li>Rework increases</li>
+                <li>Decisions are reopened</li>
             </ul>
         </div>
 
-        <h2>When This Is Needed</h2>
-        <p>If your leadership team frequently revisits decisions, corrects misaligned commitments, or reworks completed
-            initiatives, you have a structural gap.</p>
+        <div class="section-wrap">
+            <div class="label">The Standard</div>
+            <div class="content-text">
+                Miracle implements a formal management standard
+                for the pre-decision moment.
+
+                Integrated into:
+            </div>
+            <ul>
+                <li>Recurring leadership meetings</li>
+                <li>Critical decision points</li>
+                <li>Escalations and commitment moments</li>
+            </ul>
+            <div class="content-text">
+                Not motivational.
+                Operational.
+            </div>
+        </div>
+
+        <div class="timeline-box">
+            <div class="label">Implementation Timeline — 90 Days</div>
+
+            <span class="phase-title">Phase 1 — Diagnostic & Protocol Design (Weeks 1–3)</span>
+            <ul>
+                <li>Leadership decision audit</li>
+                <li>Identification of high-risk decision points</li>
+                <li>Custom pause protocol alignment</li>
+            </ul>
+
+            <span class="phase-title">Phase 2 — Live Integration (Weeks 4–8)</span>
+            <ul>
+                <li>Integration into recurring leadership meetings</li>
+                <li>Application during escalations and commitments</li>
+                <li>Facilitated implementation cycles</li>
+            </ul>
+
+            <span class="phase-title">Phase 3 — Institutionalization (Weeks 9–12)</span>
+            <ul>
+                <li>Internal ownership transfer</li>
+                <li>Decision precision tracking</li>
+                <li>Formalization as leadership standard</li>
+            </ul>
+        </div>
+
+        <div class="section-wrap">
+            <div class="label">When This Is Needed</div>
+            <div class="content-text">
+                If your leadership team frequently:
+            </div>
+            <ul>
+                <li>Revisits decisions</li>
+                <li>Corrects misaligned commitments</li>
+                <li>Reworks completed initiatives</li>
+                <li>Escalates avoidable conflicts</li>
+            </ul>
+            <div class="content-text">This indicates a structural gap.</div>
+        </div>
 
         <div class="cta-container">
             <a href="mailto:?subject=Executive%20Brief%20Request%20%E2%80%93%20Miracle&body=Hello%2C%0A%0APlease%20provide%20the%20Executive%20Brief%20for%20leadership%20review.%0A%0ACompany%3A%0ARole%2FTitle%3A%0ACompany%20Website%3A"
@@ -185,8 +252,8 @@
         </div>
 
         <div class="contact-info">
-            <p>lily@miracleofficial.com</p>
-            <p>+357 96 005 573</p>
+            lily@miracleofficial.com<br>
+            +357 96 005 573
         </div>
     </div>
 
